@@ -1,7 +1,6 @@
 import itertools
 import requests
 from bs4 import BeautifulSoup
-from pymongo import MongoClient
   
 def musinsa_crawling():
     count = 0
