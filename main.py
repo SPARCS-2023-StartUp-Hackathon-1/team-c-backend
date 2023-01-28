@@ -18,13 +18,28 @@ def musinsa_crawling():
     site_data = soup.select('.table-simple .active')
     guide_title = soup.select('.table-simple th')
     
-    for i in guide_title:
+    '''for i in guide_title:
         get_txt = i.text.replace('  ', '').replace('\n', '')
-        print(get_txt)     
+        print(get_txt)'''      
         
-    for s in site_data:         
+    '''for s in site_data:         
         get_txt = s.text.replace('  ', '').replace('\n', '')
-        print(get_txt)
+        print(get_txt)'''
+        
+    for (i, s) in itertools.zip_longest(guide_title, site_data):
+        count += 1
+        if i is None:
+            get_data = s.text.replace('  ', '').replace('\n', '') 
+            print(', ' + get_data, end='', flush=True)
+        else:
+            get_title = i.text.replace('  ', '').replace('\n', '')
+            get_data = s.text.replace('  ', '').replace('\n', '')
+            if count == 6:
+                 print(get_title + ": " + get_data, end='')
+            else:
+                print(get_title + ": " + get_data) 
+    print()
+    print()
         
 if __name__ == '__main__':
     musinsa_crawling()
