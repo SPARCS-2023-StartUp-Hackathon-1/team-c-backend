@@ -19,6 +19,8 @@ def musinsa_crawling(site_url):
     soup = BeautifulSoup(test, 'html.parser')
     
     product_title = soup.find(class_="product_title")
+    
+    #To find 2nd occurence of \n in order to substring the product title
     occurence = find_substring(product_title.text, "\n", 1)
     item_info.append(product_title.text[1 : occurence])
     
@@ -44,9 +46,12 @@ def musinsa_crawling(site_url):
             else:
                 print(get_title + ": " + get_data) 
             '''
-    #print()
-    #print()
-    print(item_info)
+            
+    guide_title = soup.find(class_="price-del").text
+    get_price = guide_title[0:2] + guide_title[3:len(guide_title)-1]
+    item_info.append(get_price)
+    
+    #print(item_info)
     return item_info
 
 if __name__ == '__main__':

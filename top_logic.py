@@ -38,6 +38,7 @@ def calc_score(product_name: str):
                 total+=20   
     
     print(str(total)+"%")
+    return total
 
 if __name__=="__main__":
     product_name = str(input("자켓 상품명을 입력하세요: "))
