@@ -1,4 +1,4 @@
-from pymongo_get_database import get_database
+from db_initialize import get_database
 
 def calc_score(product_name: str):
     
@@ -14,7 +14,7 @@ def calc_score(product_name: str):
                 total+=20
             if jacket['length'] == "기본 기장":
                 total+=20
-            if jacket['neck_line'] == "보통 넥라인":
+            if jacket['neck_line'] == "보통 넥라인" or jacket['neck_line'] == "카라넥":
                 total+=10
             elif jacket['neck_line'] == "파인 넥라인":
                 total+=20
