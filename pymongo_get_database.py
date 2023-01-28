@@ -10,3 +10,8 @@ def get_database():
  
     # Create the database for our example (we will use the same database throughout the tutorial
     return client['clothes_details']
+
+if __name__ == "__main__":   
+  
+   # Get the database
+   dbname = get_database()
