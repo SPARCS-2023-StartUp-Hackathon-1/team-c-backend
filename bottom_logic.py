@@ -1,4 +1,4 @@
-from pymongo_get_database import get_database
+from db.initialize import get_database
 
 def calc_score(product_name: str):
     
