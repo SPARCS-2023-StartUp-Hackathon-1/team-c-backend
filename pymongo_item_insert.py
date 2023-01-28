@@ -50,7 +50,7 @@ def add_items():
         "material" : "트위드"
     }
     
-    collection_name.insert_many([item_2, item_3, item_4, item_5])
+    collection_name.insert_many([item_1, item_2, item_3, item_4, item_5])
     
 if __name__ == "__main__":   
     add_items()
