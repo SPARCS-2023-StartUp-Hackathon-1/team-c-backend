@@ -37,7 +37,7 @@ def calc_score(product_name: str):
             elif jacket['material'] == "울" or jacket['material'] == "캐새미어" or jacket['material'] == "천연가죽" or jacket['material'] == "코튼" or jacket['material'] == "데님":
                 total+=20   
     
-    print(str(total) + "%")
+    print(str(total)+"%")
 
 if __name__=="__main__":
     product_name = str(input("자켓 상품명을 입력하세요: "))
