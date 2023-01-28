@@ -51,3 +51,6 @@ def add_items():
     }
     
     collection_name.insert_many([item_2, item_3, item_4, item_5])
+    
+if __name__ == "__main__":   
+    add_items()
