@@ -17,14 +17,6 @@ def musinsa_crawling():
     
     site_data = soup.select('.table-simple .active')
     guide_title = soup.select('.table-simple th')
-    
-    '''for i in guide_title:
-        get_txt = i.text.replace('  ', '').replace('\n', '')
-        print(get_txt)'''      
-        
-    '''for s in site_data:         
-        get_txt = s.text.replace('  ', '').replace('\n', '')
-        print(get_txt)'''
         
     for (i, s) in itertools.zip_longest(guide_title, site_data):
         count += 1
