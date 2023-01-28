@@ -29,12 +29,12 @@ def musinsa_crawling(site_url):
         count += 1
         if i is None:
             get_data = s.text.replace('  ', '').replace('\n', '') 
-            print(', ' + get_data, end='', flush=True)
+            #print(', ' + get_data, end='', flush=True)
         else:
             get_title = i.text.replace('  ', '').replace('\n', '')
             get_data = s.text.replace('  ', '').replace('\n', '')
             item_info.append(get_data)
-            print(get_title + ": " + get_data)
+            #print(get_title + ": " + get_data)
             
             if count == 5:
                 break
@@ -44,8 +44,8 @@ def musinsa_crawling(site_url):
             else:
                 print(get_title + ": " + get_data) 
             '''
-    print()
-    print()
+    #print()
+    #print()
     print(item_info)
     return item_info
 
