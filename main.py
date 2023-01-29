@@ -8,7 +8,7 @@ def find_substring(txt, str1, n):
         return -1
     return len(txt) - len(parts[-1]) - len(str1)
 
-def musinsa_crawling(site_url):
+def musinsa_crawling(site_url: str):
     count = 0
     item_info = []
     
@@ -57,5 +57,4 @@ def musinsa_crawling(site_url):
 if __name__ == '__main__':
     url = input("크롤링 할 무신사 사이트 URL을 입력하세요: ")
     musinsa_crawling(url)
-
-
+    
