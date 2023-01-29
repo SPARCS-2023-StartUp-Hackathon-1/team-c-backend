@@ -1,4 +1,4 @@
-# TEAM C Repository - Backend
+# [TEAM C] Repository - Backend
 
 Team C 백엔드 부분을 담당하는 레포지토리입니다.
 
