@@ -43,11 +43,7 @@ Team C 백엔드 부분을 담당하는 레포지토리입니다.
     item_info.append(get_price)
 ``` 
 
-## 환경 변수 및 시크릿
-- MongoDB_Username
-- MongoDB_Password
-
-## Requirements
+## Python 종속 항목 지정
 ```
 1. Python3
 Make sure Python3 is installed and check its version by `python -V` 
@@ -55,3 +51,21 @@ Make sure Python3 is installed and check its version by `python -V`
 2. Requirements
 pip install -r requirements.txt
 ```
+
+## 배포 방법
+```
+1. Clone the repository 
+git clone https://github.com/SPARCS-2023-StartUp-Hackathon-1/team-c-backend.git
+
+2. Save item information to MongoDB
+python3 top_item_insert.py
+python3 bottom_item_insert.py
+
+3. Run logic by inputting item name
+python3 top_logic.py
+python3 bottom_logic.py
+```
+
+## 환경 변수 및 시크릿
+- MongoDB_Username
+- MongoDB_Password
