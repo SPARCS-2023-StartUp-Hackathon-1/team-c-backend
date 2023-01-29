@@ -1,7 +1,9 @@
+from flask import Flask, jsonify, request
 import requests
 import math
 
-
+response = ''
+app = Flask(__name__)
 
 part_index=["코","목","오른쪽 어깨","오른쪽 팔꿈치","오른쪽 손목","왼쪽 어깨",
            "왼쪽 팔꿈치","왼쪽 손목","오른쪽 엉덩이","오른쪽 무릎","오른쪽 발목",
@@ -12,7 +14,12 @@ part_index=["코","목","오른쪽 어깨","오른쪽 팔꿈치","오른쪽 손�
 #First element is shoulder/height ratio
 #second one is lower body / height ratio
 #thrid one is upper bofdy / height ratio
+@app.route('/', methods = ['GET', 'POST'])
 def send_pose_est(path):
+    global response
+    if (request.method == 'GET'):
+        return jsonify({'img' : response})
+    
     url = "https://naveropenapi.apigw.ntruss.com/vision-pose/v1/estimate"
     client_id = "b41bfdqmg1"
     client_secret = "AHCHw93NO8yHc6vcIOmBrhdbhzKN87NVP4akyVEF"
@@ -101,7 +108,6 @@ def upper_height_sub(response_dict):
         return -1
 
 #어깨가 넓음 0.35
-#
 
 def type_check(path):
     score = send_pose_est(path)
@@ -118,6 +124,7 @@ def type_check(path):
 
 
 if __name__ == "__main__":
+    app.run(debug=True)
     result  = type_check("24.jpg")
     type_string = ["Wave","Straight","Natural"]
     print(type_string[result])
