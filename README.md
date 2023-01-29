@@ -46,3 +46,12 @@ Team C 백엔드 부분을 담당하는 레포지토리입니다.
 ## 환경 변수 및 시크릿
 - MongoDB_Username
 - MongoDB_Password
+
+## Requirements
+```
+1. Python3
+Make sure Python3 is installed and check its version by `python -V` 
+
+2. Requirements
+pip install -r requirements.txt
+```
